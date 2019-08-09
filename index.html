@@ -4,11 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>chat test</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <title>fb_chat</title>
 </head>
 <body>
     <h1>this is a demo chat test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repudiandae exercitationem nam, nostrum placeat quasi illo alias nulla voluptate excepturi quo eos eaque enim aliquid, voluptatem delectus corrupti, veritatis debitis.</p>
+    
+    <form action="" onsubmit="formSubmit(event)">
+        <input id='topic-content' type="text" placeholder="enter your topic" required="required">
+        <button>add question</button>
+    </form>
+
+    <div class="topic-container" id='topic-container'>
+        <div class="topic-item">
+            abc
+            <button>edit</button>
+            <button>delete</button>
+        </div>
+        <div class="topic-item">abc</div>
+        <div class="topic-item">abc</div>
+        <div id="" class="topic-item">abc</div>
+    </div>
+    
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDKLPaG18-7JA50fO8kYs6HFuudG-iBHPQ",
+            authDomain: "debate-test1.firebaseapp.com",
+            databaseURL: "https://debate-test1.firebaseio.com",
+            projectId: "debate-test1",
+            storageBucket: "debate-test1.appspot.com",
+            messagingSenderId: "155901566229",
+            appId: "1:155901566229:web:060e2314bb97ceb8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true });
+    </script>
+    <script src="./fb_chat.js"></script>
+    
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
